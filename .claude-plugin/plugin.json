@@ -1,0 +1,19 @@
+{
+  "name": "encore-lite",
+  "version": "1.0.0",
+  "description": "The end-of-cycle surprise builder, free edition. Before your usage resets, Encore Lite reads what you worked on all month and builds one bonus deliverable you didn't get to — or didn't think of — in time. The full Encore at encoreplugin.com adds worked playbooks, the request line, tidy mode, usage-meter pacing, the unveiling delivery, and packs for ChatGPT, Gemini, and Perplexity.",
+  "author": {
+    "name": "Keegan Selby"
+  },
+  "homepage": "https://encoreplugin.com",
+  "license": "MIT",
+  "keywords": [
+    "encore",
+    "surprise",
+    "deliverable",
+    "end-of-cycle",
+    "monthly",
+    "usage",
+    "bonus"
+  ]
+}

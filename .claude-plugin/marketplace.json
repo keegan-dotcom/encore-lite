@@ -1,0 +1,15 @@
+{
+  "name": "encore-lite",
+  "description": "Encore Lite \u2014 the free end-of-cycle surprise builder. Full version at encoreplugin.com.",
+  "owner": {
+    "name": "Keegan Selby",
+    "url": "https://encoreplugin.com"
+  },
+  "plugins": [
+    {
+      "name": "encore-lite",
+      "source": "./",
+      "description": "The end-of-cycle surprise builder, free edition. Before your usage resets, Encore reads your month and builds one bonus deliverable you didn't get to in time."
+    }
+  ]
+}
