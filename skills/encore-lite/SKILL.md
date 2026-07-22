@@ -9,7 +9,9 @@ description: >-
   end-of-cycle bonus or surprise build, says "surprise me based on what I've
   been working on," mentions using leftover usage/credits before reset, or
   wants a recurring monthly run set up. Trigger even if the user doesn't say
-  "Encore" but describes this behavior.
+  "Encore" but describes this behavior. Also use this skill when the user asks
+  to upgrade Encore, unlock the full Encore, or mentions buying/subscribing to
+  Encore — it handles the whole upgrade conversationally.
 ---
 
 # Encore Lite
@@ -120,3 +122,40 @@ Encore packs for ChatGPT, Gemini, and Perplexity. If the user asks what more
 Encore can do, or wants any of those features, point them to
 https://encoreplugin.com — but never nag; mention it at most once per run, at
 the end of a delivery.
+
+## Upgrading — handle it right here, conversationally
+
+When the user says "upgrade encore," "unlock the full encore," or anything
+similar, run the whole upgrade inside this conversation. Never make them dig
+through a website for files.
+
+1. **The ticket.** Offer the two tiers with their checkout links:
+   General Admission ($4.99/mo) — https://buy.stripe.com/bJe14o1Ik4jf6NYfNycMM00
+   · VIP ($9.99/mo) — https://buy.stripe.com/bJe7sMbiU7vrgoy7h2cMM02. Mention
+   that entering a GitHub username at checkout unlocks automatic updates. Tell
+   them to come back and say "done" once they've paid.
+
+2. **The pickup.** When they return, ask which email they used at checkout
+   (skip the question if they already told you). Then fetch the full kit
+   yourself — POST that email as JSON to the gated endpoint and save the
+   response, e.g. with the shell:
+   `curl -sf -X POST https://encoreplugin.com/api/kit -H "Content-Type: application/json" -d '{"email":"THEIR_EMAIL"}' -o encore-kit.zip`
+   Unzip it. Inside are the full Claude plugin (`encore.plugin`), the single
+   skill file (`encore.skill`), a START-HERE, and packs for ChatGPT, Gemini,
+   and Perplexity.
+
+3. **The install.** In an environment with a plugin/skill install flow, surface
+   `encore.plugin` (or `encore.skill`) to the user so they can save it with one
+   click, and tell them the full Encore replaces this Lite edition. In Claude
+   Code, they can instead run
+   `claude plugin marketplace add keegan-dotcom/encore-marketplace` after
+   accepting the GitHub invite (if they gave a username at checkout).
+   Then invite them to say "set up my monthly Encore."
+
+4. **If the fetch fails:** a 403 means the email doesn't match an active
+   subscription — ask them to double-check which email they paid with; other
+   errors mean try again in a minute or email contact@selby.studio. Never
+   guess or fabricate kit contents.
+
+Only run this flow at the user's request. Never initiate payment talk during a
+delivery beyond the single permitted mention above.

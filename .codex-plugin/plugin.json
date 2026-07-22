@@ -1,7 +1,7 @@
 {
   "name": "encore-lite",
-  "version": "1.0.0",
-  "description": "The end-of-cycle surprise builder, free edition. Before your usage resets, Encore reads what you worked on all month and builds one bonus deliverable you didn't get to — or didn't think of — in time.",
+  "version": "1.1.0",
+  "description": "The end-of-cycle surprise builder, free edition. Before your usage resets, Encore reads what you worked on all month and builds one bonus deliverable you didn't get to \u2014 or didn't think of \u2014 in time.",
   "author": {
     "name": "Keegan Selby",
     "email": "contact@selby.studio",
@@ -10,12 +10,19 @@
   "homepage": "https://encoreplugin.com",
   "repository": "https://github.com/keegan-dotcom/encore-lite",
   "license": "MIT",
-  "keywords": ["encore", "surprise", "deliverable", "end-of-cycle", "monthly", "usage"],
+  "keywords": [
+    "encore",
+    "surprise",
+    "deliverable",
+    "end-of-cycle",
+    "monthly",
+    "usage"
+  ],
   "skills": "./skills/",
   "interface": {
     "displayName": "Encore Lite",
-    "shortDescription": "End-of-cycle surprise builder — free edition",
-    "longDescription": "You paid for a full month of AI. Before your cycle ends, Encore reads what you worked on — your memory, recent chats, and connected context — and builds one bonus deliverable you didn't get to, or didn't think of, in time. Say \"run encore\" for an instant build, or \"set up my monthly encore\" to schedule it for the end of every cycle. The full Encore at encoreplugin.com adds worked playbooks, the request line, tidy mode, the unveiling delivery, and versions for Claude, Gemini, and Perplexity.",
+    "shortDescription": "End-of-cycle surprise builder \u2014 free edition",
+    "longDescription": "You paid for a full month of AI. Before your cycle ends, Encore reads what you worked on \u2014 your memory, recent chats, and connected context \u2014 and builds one bonus deliverable you didn't get to, or didn't think of, in time. Say \"run encore\" for an instant build, or \"set up my monthly encore\" to schedule it for the end of every cycle. The full Encore at encoreplugin.com adds worked playbooks, the request line, tidy mode, the unveiling delivery, and versions for Claude, Gemini, and Perplexity.",
     "developerName": "Encore",
     "category": "Productivity",
     "websiteURL": "https://encoreplugin.com",
