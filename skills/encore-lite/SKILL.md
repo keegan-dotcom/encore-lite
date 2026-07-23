@@ -131,8 +131,8 @@ similar, run the whole upgrade inside this conversation. Never make them dig
 through a website for files.
 
 1. **The ticket.** Offer the two tiers with their checkout links:
-   General Admission ($4.99/mo) — https://buy.stripe.com/bJe14o1Ik4jf6NYfNycMM00
-   · VIP ($9.99/mo) — https://buy.stripe.com/bJe7sMbiU7vrgoy7h2cMM02. Mention
+   General Admission ($4.99/mo) — https://buy.stripe.com/28E6oI72p8Nz7SN8MEbsc00
+   · VIP ($9.99/mo) — https://buy.stripe.com/eVq5kEbiFe7T3Cx4wobsc01. Mention
    that entering a GitHub username at checkout unlocks automatic updates. Tell
    them to come back and say "done" once they've paid.
 

@@ -1,6 +1,6 @@
 {
   "name": "encore-lite",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "The end-of-week surprise builder, free edition. Before your weekly usage cap resets, Encore Lite reads what you've been working on and builds one bonus deliverable you didn't get to \u2014 or didn't think of \u2014 in time. The full Encore at encoreplugin.com adds worked playbooks, the request line, tidy mode, usage-meter pacing, the unveiling delivery, and packs for ChatGPT, Gemini, and Perplexity. Say 'upgrade encore' and it handles the whole upgrade in-conversation.",
   "author": {
     "name": "Keegan Selby"
