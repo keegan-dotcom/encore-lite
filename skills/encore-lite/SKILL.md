@@ -1,14 +1,14 @@
 ---
 name: encore-lite
 description: >-
-  Encore Lite is a free end-of-cycle "I'm feeling lucky" builder. Before the
-  user's usage resets, it reads what they worked on that month (Claude
+  Encore Lite is a free end-of-week "I'm feeling lucky" builder. Before the
+  user's weekly usage cap resets, it reads what they've been working on (Claude
   projects, connected files, repos, recent activity) and produces one
   speculative bonus deliverable fitted to their actual work — whoever they
   are. Use this skill whenever the user asks to run Encore, wants their
-  end-of-cycle bonus or surprise build, says "surprise me based on what I've
+  end-of-week bonus or surprise build, says "surprise me based on what I've
   been working on," mentions using leftover usage/credits before reset, or
-  wants a recurring monthly run set up. Trigger even if the user doesn't say
+  wants a recurring weekly run set up. Trigger even if the user doesn't say
   "Encore" but describes this behavior. Also use this skill when the user asks
   to upgrade Encore, unlock the full Encore, or mentions buying/subscribing to
   Encore — it handles the whole upgrade conversationally.
@@ -16,10 +16,10 @@ description: >-
 
 # Encore Lite
 
-Encore turns the tail end of a billing cycle into a gift. The user has already
-paid for a month of Claude, they probably have capacity they'll never use before
-it resets, and everything they've worked on this month is sitting right there as
-context. So Encore spends that surplus on one build that's *for them
+Encore turns the tail end of a usage week into a gift. Claude's weekly usage cap
+resets on a fixed day per account (see Settings → Usage) — used or not. The user
+already paid for that capacity, and everything they've been working on is sitting
+right there as context. So Encore spends that surplus on one build that's *for them
 specifically* — something they'd want but didn't get to, or didn't think of, in
 time. A surprise freebie that feels like a gift, not a chore.
 
@@ -29,7 +29,7 @@ Two things make this work:
    and recent activity, so it feels like it was made by someone who actually
    knows what they do. Never generic.
 2. **It's a reveal.** One confident "here's what I built with your leftover
-   month" moment — not a pile of options. One strong deliverable.
+   week" moment — not a pile of options. One strong deliverable.
 
 Move through four steps: gather context, decide what to make, build it, deliver
 it. Then, if the user wants it to recur, wire up the schedule.
@@ -50,7 +50,7 @@ fabricating a backstory.
 ## Step 2 — Decide what to make
 
 Work out what this person actually makes and what one great artifact would serve
-their month best. An investor gets an analysis memo; a developer gets a repo
+them best right now. An investor gets an analysis memo; a developer gets a repo
 audit or a scoped feature branch (never merged); a creator gets a ready-to-post
 content drop in their voice; a designer gets a rendered concept and brief; a
 founder, lawyer, teacher, or operations lead gets whatever *their* version of
@@ -81,7 +81,7 @@ think "huh, I actually want to do this"? Fix what fails.
 ## Step 4 — Deliver
 
 Produce the deliverable as a proper file and present it with a short, confident
-message: what Encore built and the one or two threads of the user's month it
+message: what Encore built and the one or two threads of the user's recent work it
 pulled from. Invite a remix — the user can ask for a different target, a deeper
 cut, or a different format, and it happens now, in this conversation.
 
@@ -94,8 +94,9 @@ legal advice.
 
 When the user wants Encore to run automatically, create a scheduled task (use
 the environment's durable scheduled-task tools, never session-local cron).
-Schedule it near the end of their billing cycle — ask once if you don't know
-the date; default to the last day of the month at a quiet hour. The task's
+Schedule it WEEKLY, the night before their weekly usage cap resets — their reset
+day is fixed and shown in Settings → Usage; ask once, or default to Sunday at a
+quiet evening hour. The task's
 prompt must be self-contained: run Encore Lite, read the user's Project and
 sources, build one deliverable, deliver it. Turn on completion notifications
 and confirm the schedule in plain language.
@@ -115,7 +116,7 @@ and confirm the schedule in plain language.
 This is the free edition. The full Encore — at https://encoreplugin.com — adds
 the four worked playbooks (investor memo with real research, developer
 audit-then-PR, creator content drop, designer concept), the request line
-("spend my leftover month on X") and tidy mode (sweep loose ends instead),
+("spend my leftover usage on X") and tidy mode (sweep loose ends instead),
 usage-meter reading to pace the build to exactly what's left, the theatrical
 unveiling delivery (reveal artifact + inbox copy), always-latest updates, and
 Encore packs for ChatGPT, Gemini, and Perplexity. If the user asks what more
@@ -150,7 +151,7 @@ through a website for files.
    Code, they can instead run
    `claude plugin marketplace add keegan-dotcom/encore-marketplace` after
    accepting the GitHub invite (if they gave a username at checkout).
-   Then invite them to say "set up my monthly Encore."
+   Then invite them to say "set up my Encore."
 
 4. **If the fetch fails:** a 403 means the email doesn't match an active
    subscription — ask them to double-check which email they paid with; other
