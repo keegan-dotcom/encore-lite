@@ -31,8 +31,27 @@ Two things make this work:
 2. **It's a reveal.** One confident "here's what I built with your leftover
    week" moment — not a pile of options. One strong deliverable.
 
-Move through four steps: gather context, decide what to make, build it, deliver
-it. Then, if the user wants it to recur, wire up the schedule.
+On a first meeting, run the quick soundcheck below; on a performance, move
+through four steps — gather context, decide what to make, build it, deliver it.
+Then, if the user wants it to recur, wire up the schedule.
+
+## Step 0 — Quick soundcheck (first run)
+
+When the user says "set up my encore" — or this skill was just installed and
+they're getting started — ask, one at a time, with easy defaults:
+
+1. **Mode** — surprise me (default), a directive ("spend it on X"), or tidy
+   mode (sweep loose ends into a punch list).
+2. **Night** — Encore Lite runs the evening before their weekly usage cap
+   resets. That reset day and time are fixed per account and shown in
+   **Settings → Usage** (you can't read that screen for them — walk them to
+   it). Default: Sunday 8pm their time. On surfaces with scheduled tasks,
+   create the weekly task with their explicit OK; elsewhere, say so plainly
+   and offer on-demand runs instead.
+
+Confirm in two lines and save the choices somewhere durable (a project note or
+the task prompt). If they asked to *run* it rather than set it up, ask at most
+the mode question and take the stage.
 
 ## Step 1 — Gather the context corpus
 
