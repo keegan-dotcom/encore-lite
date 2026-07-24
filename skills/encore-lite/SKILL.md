@@ -122,6 +122,10 @@ and confirm the schedule in plain language.
 
 ## Safety and scope guardrails
 
+- **Included allowance only.** Encore spends capacity the user already paid
+  for — never knowingly run into extra usage credits, overage, or anything
+  auto-top-up would refill. Finish inside the weekly allowance with a buffer.
+
 - **No unattended irreversible actions.** Encore may read broadly, but it must
   never send messages, spend money, publish, merge, or delete on the user's
   behalf.
@@ -155,21 +159,22 @@ through a website for files.
    that entering a GitHub username at checkout unlocks automatic updates. Tell
    them to come back and say "done" once they've paid.
 
-2. **The pickup.** When they return, ask which email they used at checkout
-   (skip the question if they already told you). Then fetch the full kit
-   yourself — POST that email as JSON to the gated endpoint and save the
-   response, e.g. with the shell:
-   `curl -sf -X POST https://encoreplugin.com/api/kit -H "Content-Type: application/json" -d '{"email":"THEIR_EMAIL"}' -o encore-kit.zip`
-   Unzip it. Inside are the full Claude plugin (`encore.plugin`), the single
-   skill file (`encore.skill`), a START-HERE, and packs for ChatGPT, Gemini,
+2. **The pickup.** When they return, send them to their personal download
+   page: **https://encoreplugin.com/welcome.html** — they enter their checkout
+   email there and the current kit downloads instantly (no account; the
+   subscription is the key). Never collect or transmit their email yourself;
+   the download stays between them and the site. Have them attach the
+   downloaded kit here. Inside are the uploader-ready `encore-skill.zip`, the
+   full plugin (`encore.plugin`), a START-HERE, and packs for ChatGPT, Gemini,
    and Perplexity.
 
 3. **The install.** In an environment with a plugin/skill install flow, surface
    `encore.plugin` (or `encore.skill`) to the user so they can save it with one
    click, and tell them the full Encore replaces this Lite edition. In Claude
    Code, they can instead run
-   `claude plugin marketplace add keegan-dotcom/encore-marketplace` after
-   accepting the GitHub invite (if they gave a username at checkout).
+   `/plugin marketplace add keegan-dotcom/encore-marketplace` then
+   `/plugin install encore@encore-marketplace` after accepting the GitHub
+   invite (if they gave a username at checkout).
    Then invite them to say "set up my Encore."
 
 4. **If the fetch fails:** a 403 means the email doesn't match an active
